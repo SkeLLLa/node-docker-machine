@@ -75,7 +75,10 @@ class Machine {
 
     for (const key in options) {
       if (hasOwnProperty.call(options, key)) {
-        args.push(`--${key}`, options[key])
+        args.push(`--${key}`)
+        if (options[key]) {
+          args.push(options[key])
+        }
       }
     }
 
